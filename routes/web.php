@@ -21,7 +21,6 @@ Route::post('/register', [LoginController::class, 'register'])->name('register')
 /* Home */
 Route::get('/home', [LoginController::class, 'home'])->name('home')->middleware('auth');
 Route::get('/showUsers', [LoginController::class, 'showUsers'])->name('showUsers');
-Route::get('/searchUsers', [LoginController::class, 'searchUsers'])->name('searchUsers');
 
 //Messages
 Route::get('/showMessages', [MessageController::class, 'showMessages'])->name('showMessages');
