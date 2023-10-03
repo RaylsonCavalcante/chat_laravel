@@ -415,40 +415,6 @@ $(document).ready(function(){
 	});
 });
 
-//Search Users
-$(document).ready(function(){
-	$("#searchPatients").on('keyup',function(e){
-		e.preventDefault();
-
-		var value = $(this).val();
-
-		if(value === ""){
-
-			$("#list-patients").show();
-			$("#list-patients-search").hide();
-		}else{
-			$("#list-patients-search").show();
-			$("#list-patients").hide();
-
-			var spin_search = document.getElementById('spin-search');
-			spin_search.style.visibility = 'visible';
-
-
-			$.ajax({
-				type: 'GET',
-				url: '/searchPatients/'+$("#sessionUser").val(),
-				data: {
-					search: value,
-				},
-				success:function(data){
-					$("#list-patients-search").html(data);
-					spin_search.style.visibility = 'hidden';
-				}
-			});
-		}
-	});
-});
-
 //Show Screen Messages
 function showScreenMessages(id){
 	let iconLogo = document.getElementById('iconLogo');
